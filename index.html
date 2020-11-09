@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+	  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height">
+      <title>Baslik</title>
+      <meta name="description" content="aciklama" />
+      <link href="style/assets/fonts.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="style/tema.css?v002" id="theme_stylesheet">
+      <link rel="stylesheet" href="style/assets/bootstrap.min.css">
+      <link rel="stylesheet" href="style/assets/bootstrap-theme.min.css">
+      <link rel="stylesheet" href="style/assets/jquery-confirm.min.css">
+      <link rel="stylesheet" href="style/assets/font-awesome.min.css">
+      <link rel="stylesheet" href="style/assets/bootstrap-colorselector.min.css">
+      <link rel="stylesheet" type="text/css" href="style/assets/emojionearea.min.css">
+	  <script type="text/javascript" src="script/jquery-1.11.3.min.js"></script>
+	  <script>$(document).ready(function() {$(".main-page-container").fadeOut("slow");}); </script>	
+
+   </head>
+   <body>
+	<div class="main-page-container">
+		<p class="GeLKeyfim">GeLKeyfim.Com Yükleniyor...</p>
+		<div class="neon-light"></div>
+	</div>
+      <section class="basliyoruz">
+         <div class="chat-giris login-form">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3> <strong>Sohbet Girişi</strong> </h3>
+               </div>
+               <div class="panel-body">
+                  <div class="text-center mbottom">
+                     <h4 id="durum"> Sohbet odalarına </h4>
+                     <h4> <strong>Hoşgeldiniz</strong> </h4>
+                  </div>
+                  <form action="" id="IRCBaglanti">
+                     <div class="form-group">
+                        <div class="input-group">
+                           <div class="input-group-btn">
+                              <button type="button" class=" form-control input-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fa fa-user"></i>
+                              </button>
+                           </div>
+                           <input type="text" name="nickname" id="nickname" class="form-control input-lg" aria-label="" placeholder="Nickname" autocomplete="username">
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="input-group">
+                           <div class="input-group-btn">
+                              <button type="button" class=" form-control dropdown-toggle input-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fa fa-key"></i>
+                              </button>
+                           </div>
+                           <input type="password" name="password" id="password" class="form-control input-lg " aria-label="" placeholder="Şifre" autocomplete="current-password">
+                        </div>
+                     </div>
+                     <button type="submit" id="button" class="btn btn-lg btn-success btn-block"> <strong>Giriş Yap</strong> </button>
+                     <div class="form-links">
+                        <div class="text-center">Şifreniz yoksa ise boş bırakın</div>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+         <div class="gizle" id="chat">
+		 <div class="sohbetkismi">
+                   <div class="user-content container-fluid">
+                        <div class="row chat-ust">
+                           <div class="col-md-4 col-xs-8 col-sm-5 hidden-xs hidden-sm">
+								  <span class="h5 t-w hidden-xs hidden-sm">Merhaba <strong class="kimimben"></strong></span>
+								  <span class="h5 t-w hidden-sm mob hidden-xs"> <span id="kanalisim"></span> <span id="sayi"></span></span>
+								
+                           </div>
+                           <div class="col-md-8 col-sm-7 col-xs-4 hidden-xs hidden-sm">
+                              <div class="top-menu-list">
+                                 <ul class="nav nav-pills navbar-right collapse navbar-collapse">
+                                    <li id="ayarlar" class="hidden-sm hidden-xs"><i class="fa fa-cogs"></i> Ayarlar</li>
+                                    <li id="kanalagir" class="hidden-sm hidden-xs"><i class="fa fa-user-plus"></i> Başka Odaya Gir</li>
+                                    <li id="nickdegis" class="hidden-sm hidden-xs"><i class="fa fa-reply-all"></i> Nick Değiş</li>
+                                    <li id="nickkayit" class="hidden-sm hidden-xs"><i class="fa fa-sitemap"></i> Nickimi Kaydet</li>
+									<li id="hakkimizda" class="hidden-sm hidden-xs"><i class="fa fa-info-circle fa-3x"></i></li>
+                                 </ul>
+								 
+                              </div>
+							  
+                           </div>
+						   <!-- Hakan Mobil -->
+						   <div class="menuBox col-md-12 hidden-lg hidden-md">
+						   <div class="col-xs-4 col-sm-4" style="padding-left: 5px;"><span class="kanallar" onclick="divac('mobilkanallar'); divkapat('mobilmenu'); divkapat('ozelmesaj');"><i class="fa fa-hashtag"></i> Kanallar</span></div>
+						   <div class="col-xs-4 col-sm-4"><span class="menua" onclick="divac('mobilmenu'); divkapat('mobilkanallar'); divkapat('ozelmesaj');"><i class="fa fa-list-ul"></i> Menü</span></div>
+						   <div class="col-xs-4 col-sm-4" style="padding-right: 3px;"><span class="ozelmesaj" onclick="divac('ozelmesaj'); divkapat('mobilkanallar'); divkapat('mobilmenu');"><i class="fa fa-comments-o"></i> Özel Mesaj</span> <span class="badge uyari-badge"></span></div>
+						   <div id="mobilkanallar" class="acilirBox">
+						   <div class="kapaticon"><span onclick="divac('mobilkanallar');"><i class="fa fa-close"></i></span></div>
+							<div class="acilirBaslik">Kanallar</div>
+							<ul class="mobilmenunav nav" id="mkanal">
+
+							</ul>
+							
+						   </div>
+						   <div id="mobilmenu" class="acilirBox">
+						    <div class="kapaticon"><span onclick="divac('mobilmenu');"><i class="fa fa-close"></i></span></div>
+							<div class="acilirBaslik">Menü</div>
+						   <ul class="mobilmenunav nav">
+										<li id="ayarlar2"><i class="fa fa-cogs"></i> Ayarlar</li>
+										<li id="kanalagir2"><i class="fa fa-user-plus"></i> Başka Odaya Gir</li>
+										<li id="nickdegis2"><i class="fa fa-reply-all"></i> Nick Değiş</li>
+										<li id="nickkayit2"><i class="fa fa-sitemap"></i> Nickimi Kaydet</li>
+										<li id="hakkimizda2"><i class="fa fa-info-circle"></i> Hakkımızda</li>
+									  </ul>
+						   </div>
+						   <div id="ozelmesaj" class="acilirBox">
+						   <div class="kapaticon"><span onclick="divac('ozelmesaj');"><i class="fa fa-close"></i></span></div>
+						   <div class="acilirBaslik">Özel Mesaj (<span class="omesajsayi">0</span>)</div>
+						   <ul class="mobilmenunav nav" id="mozel">
+
+							</ul>
+						   </div>
+						   </div>
+                        </div>
+                     <div class="chat-ust-ic">
+                     <div class="row">
+                        <div id="chatPanel" class="col-md-9 col-sm-10 col-xs-10">
+							<div id="panelSol" class="col-lg-12">
+								<div class="topicimiz gizle"><div class="col-md-12" id="topic"></div></div>
+							   <div class="chat-panelimiz">
+							   <li id="sunucu-status" class="chat-panel chat-server">
+							   <div class="mesaj not not-blue gonderen_yok">*** &nbsp;<span class="yazi"><span class="irc-bold">Bağlantı kuruluyor...</span></span></div>
+							   <div class="mesaj not not-blue gonderen_yok">*** &nbsp;<span class="yazi"><span class="irc-bold">Sizlere daha iyi hizmet vermek adına kendimizi hergün yeniliyoruz...</span></span></div>
+							   </li>
+								  <span id="mesajlarimiz" style="display:none;"></span>
+							   </div>
+							   <div class="row">
+								  <div class="text-ayar">
+									 <nav class="font-panel nav navbar-nav">
+										<li id="bold"><span id="ayar-yazi" ><i class="fa fa-bold"></i></span></li>
+										<li id="italic"><span id="ayar-yazi"><i class="fa fa-italic"></i></span></li>
+										<li id="altcizgili"><span id="ayar-yazi"><i class="fa fa-underline"></i></span></li>
+										<li id="temizle"><button class="btn btn-default" id="ayar-yazi"><i class="fa fa-eraser"></i> <span class="hidden-xs">Temizle</span></button></li>
+									 </nav>
+									 <li id="radyo" class="pull-right font-panel nav navbar-nav"><span id="durum" class="fa fa-play" style="font-size:18px;"></span> <span id='calan'></span></li>
+								  </div>
+							   </div>
+							   <div class="panel-footer p-lr-0">
+								  <div class="input-group inputwrapper">
+								     <div class="input-group-addon">	
+										<select id="renksecim">
+										  <option value="0" data-color="#FFFFFF"></option>
+										  <option value="1" data-color="#000000" selected="selected"></option>
+										  <option value="2" data-color="#00007F"></option>
+										  <option value="3" data-color="#009300"></option>
+										  <option value="4" data-color="#FF0000"></option>
+										  <option value="5" data-color="#7F0000"></option>
+										  <option value="6" data-color="#9C009C"></option>
+										  <option value="7" data-color="#FC7F00"></option>
+										  <option value="8" data-color="#FFFF00"></option>
+										  <option value="9" data-color="#00FC00"></option>
+										  <option value="10" data-color="#009393"></option>
+										  <option value="11" data-color="#00FFFF"></option>
+										  <option value="12" data-color="#0000FC"></option>
+										  <option value="13" data-color="#FF00FF"></option>
+										  <option value="14" data-color="#7F7F7F"></option>
+										  <option value="15" data-color="#D2D2D2"></option>
+										</select>	
+									</div>
+								     <div class="input-group-addon">	
+										<i class="fa fa-search" id="TabAra"></i>
+									</div>
+									 <input id="btn-input" type="text" class="form-control input-block inputyolla" placeholder="Mesajınız...">
+									 <span class="input-group-btn">
+									 <button class="btn btn-primary btn-gonder btn-block sendbutton" id="btn-chat">
+									 <i class="fa fa-paper-plane"></i> Gönder</button>
+									 </span>
+								  </div>
+							   </div>
+							</div>
+                        </div>
+                              <div class="col-md-2 col-sm-2 col-xs-3" id="sagtaraf">
+                                 <div class="row">
+                                    <div id="chatListUser" class="col-md-7 col-sm-12 col-xs-12 nicklerimiz">
+                                       <div class="row">
+                                          <div class="list-group hepsi">
+                                             <div class="icon-addon addon-sm arama gizle">
+                                                <input type="text" placeholder="Nick yaziniz" class="form-control" id="nickara">
+                                                <label for="nickara" class="glyphicon glyphicon-search" rel="tooltip" title="nickara"></label>
+                                             </div>
+
+                                             <div id="skySet" style="display:none;"></div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div id="chatListKanal" class="col-md-5 col-sm-5 hidden-xs hidden-sm">
+                                       <div class="row">
+                                          <div class="list-group kanal-nav">
+                                            <ul class="list-group tablar">
+                                            <span class="list-group tablary"></span>
+                                            <span class="list-group tablarx"></span>
+											</ul>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+								 <div id="gizler"></div>
+
+                     </div>
+               </div>
+                     </div>
+                  </div>
+
+         </div>
+
+      </section>
+      <script type="text/javascript" src="script/assets/emojione.min.js"></script>
+      <script type="text/javascript" src="script/assets/emojionearea.min.js"></script>
+	  <script type="text/javascript" src="script/seedrandom.min.js"></script>
+      <script type="text/javascript" src="script/socket.io/socket.io.js"></script>
+      <script type="text/javascript" src="script/bluebird.min.js"></script>
+	  <script type="text/javascript" src="script/assets/bootstrap.min.js"></script>
+	  <script type="text/javascript" src="script/assets/jquery-confirm.min.js"></script>
+	  <script type="text/javascript" src="script/assets/BootstrapMenu.min.js"></script>
+	  <script type="text/javascript" src="script/soundmanager2.js"></script>
+	  <script type="text/javascript" src="script/assets/bootstrap-colorselector.min.js"></script>
+      <script type="text/javascript" src="script/main.js"></script>
+	  <script>
+	  function divac(id){
+		$("#"+id).slideToggle(250);
+	  }
+	  function divkapat(div1){
+		document.getElementById(div1).style.display = 'none';
+	  }
+	  </script>
+   </body>
+</html>
